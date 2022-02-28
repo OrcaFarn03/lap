@@ -1,0 +1,17 @@
+Use movierental;
+Delimiter $
+create Procedure getSearchValue(IN search text)
+
+Begin
+
+	select movie.movieTitle
+    , movie.releaseDate
+    , productionstudio.studioName
+    
+    from movie
+    join productionstudio on movie.Productionstudio_idProductionstudio = productionstudio.idProductionstudio
+    
+    where movie.movieTitle like concat('%', search, '%') or movie.releaseDate like concat('%', search, '%') or productionstudio.studioName like concat('%', search, '%');
+    
+END $
+Delimiter ;
