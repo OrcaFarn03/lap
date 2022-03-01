@@ -1,0 +1,9 @@
+$searchValue = $_GET["searchValue"];
+$sql = "call getSearchValue('".$searchValue."');";
+$result = mysqli_query($conn, $sql);
+
+echo "<table><tr><th>Movie Title</th><th>Release Date</th><th>Production Studio</th></tr>";
+while ($data = mysqli_fetch_array($result)) {
+echo "<tr><td>".$data['movieTitle']."</td><td>".$data['releaseDate']."</td><td>".$data['studioName']."</td></tr>";
+}
+echo "</table>";

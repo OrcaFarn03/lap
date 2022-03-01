@@ -1,0 +1,28 @@
+Output of Moviename, releaseDate and Studioname (Just 2 Tables joined):
+
+select movie.movieTitle, movie.releaseDate, productionstudio.studioName from movie
+join productionstudio on movie.Productionstudio_idProductionstudio = productionstudio.idProductionstudio
+
+
+
+Count of how many movies each Studio released:
+
+select productionstudio.studioName as StudioName, count(Productionstudio_idProductionstudio) as TotalMovies from movie
+join (or left outer join) productionstudio on movie.Productionstudio_idProductionstudio = productionstudio.idProductionstudio
+group by productionstudio.studioName
+
+
+Always group by the columns where no aggregate function is used on f.e. in this case productionstudio.studioName has to be the group by
+
+
+Where Filter:
+
+select productionstudio.studioName as StudioName, count(Productionstudio_idProductionstudio) as TotalMovies from movie
+join productionstudio on movie.Productionstudio_idProductionstudio = productionstudio.idProductionstudio
+where productionstudio.studioName = 'Bavaria Filmstudios'
+group by productionstudio.studioName
+
+
+
+YT Video if needed:
+https://www.youtube.com/watch?v=XOz9EjiuO98

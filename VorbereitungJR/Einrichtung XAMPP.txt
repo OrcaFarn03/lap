@@ -1,0 +1,4 @@
+1) Create a Folder "LAP" in C:\xampp\htdocs
+2) Open index.php in htdocs
+3) Comment the header an write: header('Location: '.$uri.'/LAP/nameoffile.php');
+4) Open the whole folder in VS-Code
