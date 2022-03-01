@@ -1,1 +1,0 @@
-Delete all the "visible" at the Foreign Keys, then it should work
